@@ -27,6 +27,8 @@ bwa mem reference.fasta reads1.fastq reads2.fastq > alignedreads.sam # for PE se
 
 #Using bowtie2 mapper
 
+module load bowtie2
+
 # Creating the Bowtie index for our reference genome
 bowtie2-build -f genome.fa genomename #the index will be created in the same directory as your reference genome file
 
