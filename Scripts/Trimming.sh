@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#BSUB -q priority # queue name
-#BSUB -W 2:00 # hours:minutes runlimit after which job will be killed.
-#BSUB -n 4 # number of cores requested
-#BSUB -J rnaseq_mov10_trim         # Job name
-#BSUB -o %J.out       # File to which standard out will be written
-#BSUB -e %J.err       # File to which standard err will be written
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=20gb
+#PBS -l walltime=01:00:00
+#PBS -m abe
+#PBS -q default
+#PBS -N testing
 
 cd ~/untrimmed_fastq #your path to the original fastq files (non trimmed) 
 
