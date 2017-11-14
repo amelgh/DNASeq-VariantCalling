@@ -13,6 +13,7 @@ java -jar /hpc/opt/conda/envs/trimmomatic@0.36/share/trimmomatic-0.36-5/trimmoma
 	# -threads 4 \ #optional
 	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33 It works with FASTQ (using phred + 33 or phred + 64 quality scores, depending on the Illumina pipeline used).
 	# If no quality encoding is specified, it will be determined automatically
+	# This information could be retrieved after checking the Illumina encoding in the basic statistics first section in the fastqc html
 	<reads1.fastq>\ # you can use either uncompressed or gzipp'ed FASTQ
 	<reads2.fastq>\
 <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> \ #specify 4 different output files for PE sequencing to allow the storage of unpaired reads
