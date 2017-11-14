@@ -11,8 +11,8 @@ cd ~/untrimmed_fastq #your path to the original fastq files (non trimmed)
 
 java -jar /hpc/opt/conda/envs/trimmomatic@0.36/share/trimmomatic-0.36-5/trimmomatic.jar PE \ #PE for Paired-end, if you have single End reads, use #SE
 	# -threads 4 \ #optional
-	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33
-	<reads1.fastq>\
+	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33 It works with FASTQ (using phred + 33 or phred + 64 quality scores, depending on the Illumina pipeline used).
+	<reads1.fastq>\ # you can use either uncompressed or gzipp'ed FASTQ
 	<reads2.fastq>\
 <paired output 1>  <paired output 2> \
 LEADING:3 TRAILING:3 MINLEN:36 
