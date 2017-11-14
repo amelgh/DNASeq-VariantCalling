@@ -1,0 +1,16 @@
+ssh username@omics.cgs.hku.hk
+Many strandards tools are already installed.
+To run a given tool:
+
+module avail: will list all the available tools
+module load modulename+versionnumber: will load the tool so that you can run it
+module list: will display all the currently loaded modules
+
+
+To run a job, we might run a simple command or run a bash script that will call your commands
+
+We recommend that you create bash scripts for all your tasks
+
+Here is an example
+
+
