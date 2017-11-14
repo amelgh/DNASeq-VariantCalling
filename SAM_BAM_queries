@@ -45,3 +45,8 @@ samtools view test.bam > test.sam
 Use options –h and –H to deal with the header
 ```
 
+
+samtools sort 
+
+
+
