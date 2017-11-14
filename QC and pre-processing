@@ -11,4 +11,10 @@ You might need to trim your data, there are many trimming tools that will allow 
 
 More information about Trimmomatic: http://www.usadellab.org/cms/?page=trimmomatic
 
+You can also use cutadapt that searches for the adapter in all reads and removes it when it finds it.
+All reads that were present in the input file will also be present in the output file, some of them trimmed, some of them not.
+
+Many different options are available with cutadapt, you can find more information here: https://cutadapt.readthedocs.io/en/stable/
+
+
 
