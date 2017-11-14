@@ -31,5 +31,5 @@ trimmomatic PE \ #PE for Paired-end, if you have single End reads, use #SE
 	<reads1.fastq>\
 	<reads2.fastq>\
 <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> \
-LEADING:3 TRAILING:3 MINLEN:50 
+LEADING:3 TRAILING:3 SLIDINGWINDOW:4:30 MINLEN:50 
 
