@@ -17,7 +17,7 @@ java -jar /hpc/opt/conda/envs/trimmomatic@0.36/share/trimmomatic-0.36-5/trimmoma
 	<reads1.fastq>\ # you can use either uncompressed or gzipp'ed FASTQ
 	<reads2.fastq>\
 <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> \ #specify 4 different output files for PE sequencing to allow the storage of unpaired reads
-LEADING:3 TRAILING:3 MINLEN:50
+LEADING:3 TRAILING:3 SLIDINGWINDOW:4:30 MINLEN:50
 #LEADING: Cut bases off the start of a read, if below a threshold quality
 #TRAILING: Cut bases off the end of a read, if below a threshold quality
 #MINLEN: Drop the read if it is below a specified length
