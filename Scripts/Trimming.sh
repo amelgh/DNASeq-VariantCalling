@@ -27,7 +27,7 @@ or
 module load trimmomatic/0.36
 trimmomatic PE \ #PE for Paired-end, if you have single End reads, use #SE
 	# -threads 4 \ #optional
-	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33
+	-phred33 \ 
 	<reads1.fastq>\
 	<reads2.fastq>\
 <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> \
