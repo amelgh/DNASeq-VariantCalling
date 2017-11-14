@@ -20,6 +20,14 @@ LEADING:3 TRAILING:3 MINLEN:36
 #TRAILING: Cut bases off the end of a read, if below a threshold quality
 #MINLEN: Drop the read if it is below a specified length
 
+or
 
-
+module load trimmomatic/0.36
+trimmomatic PE \ #PE for Paired-end, if you have single End reads, use #SE
+	# -threads 4 \ #optional
+	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33
+	<reads1.fastq>\
+	<reads2.fastq>\
+<paired output 1>  <paired output 2> \
+LEADING:3 TRAILING:3 MINLEN:36 
 
