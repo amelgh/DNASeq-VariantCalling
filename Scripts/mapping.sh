@@ -4,8 +4,11 @@
 
 #Using BWA mapper
 
+module load bwa
+
 #generate the bwa index if you are using bwa as mapper
 #The command below creates files for alignment. 
+
 ```
 bwa index -p genomename reference.fasta 
 ```
