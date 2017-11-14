@@ -7,6 +7,8 @@ Create a directory Results in which you will be storing your resulting and inter
 
 The first thing to do when you receive your raw data is to check the quality of your reads. This could be done using the FastQC tool: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
+You might need to trim your data, there are many trimming tools that will allow to do so. Trimmomatic is one of them.
 
+More information about Trimmomatic: http://www.usadellab.org/cms/?page=trimmomatic
 
 
