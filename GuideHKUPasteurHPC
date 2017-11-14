@@ -1,7 +1,7 @@
 To connect to the server: ssh username@omics.cgs.hku.hk
 Many strandards tools are already installed. 
 
-module avail: will list all the available tools
+module avail or module av: will list all the available tools
 module load modulename+versionnumber: will load the tool so that you can run it
 module list: will display all the currently loaded modules
 
