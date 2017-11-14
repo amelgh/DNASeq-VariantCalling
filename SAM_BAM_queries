@@ -1,0 +1,42 @@
+After mapping the FASTQ file to the reference genome you will end up with a SAM or BAM alignment file
+
+SAM stands for Sequence Alignment/Map format
+
+A single SAM file can store mapped, unmapped, and even QC-failed reads from a sequencing run, and indexed to allow rapid access: this means that the raw sequencing data can be fully recapitulated from the SAM/BAM file.
+
+SAM is rarely helpful and really takes up too much space which is why we use only the BAM in principle
+
+A BAM file (.bam) is the binary version of a SAM file (saving storage and faster manipulation)
+
+You can samtools: a free software package for manipulating SAM/BAM files to manipulate your SAM/BAM files and extract different kinf of information from them:
+It does provide utilities for:
+
+|Viewing and formatting|
+|----------------------|
+|Extracting statistics |
+|----------------------|
+|Indexing              |
+|----------------------|
+|Manipulating SAM/BAM files|
+|----------------------|
+|Editing               |
+|----------------------|
+
+```
+Usage:  samtools <command> [options]
+```
+Different samtools options are available here:  http://www.htslib.org/doc/samtools.html
+
+One of the most used tools  since BAM files are often the input files needed for many different analysis programs.
+```
+samtools view
+
+#from SAM to BAM
+samtools view -b test.sam > test.bam
+
+#from BAM to SAM
+samtools view test.bam > test.sam
+
+Use options –h and –H to deal with the header
+```
+
