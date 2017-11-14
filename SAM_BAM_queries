@@ -33,7 +33,12 @@ samtools view
 
 #from SAM to BAM
 samtools view -b test.sam > test.bam
-
+or #if the header is absent from the SAM file
+samtools view -bT test.sam > test.bam
+or #if the header is header information is available
+samtools view -bS test.sam > test.bam
+```
+```
 #from BAM to SAM
 samtools view test.bam > test.sam
 
