@@ -1,1 +1,12 @@
-The first thing to do when you receive your raw data is to check the quality of your reads 
+Keep in mind that you will be generating a lot of files in each step, organizing your data is crucial.
+
+Create a directory Rawdata in which store your fastqfiles.
+Create a directory scripts in which you write the different scripts you will be writing for the different analysis steps.
+Create a directory Results in which you will be storing your resulting and intermediate files.
+
+
+The first thing to do when you receive your raw data is to check the quality of your reads. This could be done using the FastQC tool: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
+
+
+
