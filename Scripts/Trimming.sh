@@ -9,7 +9,9 @@
 
 cd ~/untrimmed_fastq #your path to the original fastq files (non trimmed) 
 
-java -jar /opt/Trimmomatic-0.33/trimmomatic-0.33.jar SE \
+java -jar /opt/Trimmomatic-0.35/trimmomatic-0.35.jar PE \ #PE for Paired-end, if you have single End reads, use #SE
 	-threads 4 \
-	-phred33 \
-	. \
+	-phred33 \ # TOPHRED33: Convert quality scores to Phred-33
+	. <input1>\
+	. <input2>\
+<paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2>
