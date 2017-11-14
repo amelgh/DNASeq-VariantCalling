@@ -7,5 +7,8 @@
 #generate the bwa index if you are using bwa as mapper
 #The command below creates files for alignment. 
 bwa index reference.fasta
-bwa index -a bwtsw reference.fa 
+#bwa index -a bwtsw reference.fa
 # -a bwtsw specifies that we want to use the indexing algorithm that is capable of handling the whole human genome
+
+#once your index is ready, you can launch the mapping
+
