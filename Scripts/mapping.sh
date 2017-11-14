@@ -12,3 +12,7 @@ bwa index reference.fasta
 
 #once your index is ready, you can launch the mapping
 
+bwa mem genome.fasta read1.fastq read2.fastq > alignedreads.sam
+
+
+
