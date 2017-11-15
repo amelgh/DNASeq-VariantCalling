@@ -57,6 +57,7 @@ samtools view test.sam |samtools sort –o test.bam
 ```
 
 samtools flagstat file.bam: does a full pass through the input file to calculate and print statistics such as:
+
 |% reads mapped|
 |--------------|
 |% unmapped reads|
@@ -65,6 +66,7 @@ samtools flagstat file.bam: does a full pass through the input file to calculate
 |--------------|
 |Other information|
 |--------------|
+
 
 Many tools require a BAM Index file to more efficiently access reads in a BAM file.  
 To create a BAM index, you  must first sort the BAM file to create a sorted.bam and then run samtools index with the sorted.bam as input
