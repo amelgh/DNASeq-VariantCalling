@@ -11,8 +11,8 @@ We recommend using GATK during this Course. For more information, check the GATK
 You can start by specifying creating 2 variables $GATK and $PICARD that will contain the respective paths to the different JAR files contained in the GATK and PICARD suites.
 
 ```
-export PICARD='/usr/local/bin/picard-tools/picard.jar'
-export GATK='/usr/local/bin/GenomeAnalysisTK.jar'
+export PICARD='/hpc/opt/conda/envs/picard@2.10.6/share/picard-2.10.6-0/picard.jar'
+export GATK='/hpc/opt/conda/envs/gatk@3.8/opt/gatk-3.8/GenomeAnalysisTK.jar'
 ```
 
 
