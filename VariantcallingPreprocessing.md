@@ -162,7 +162,9 @@ java -jar $GATK \
     -I realignedBam.bam\
     -knownSites dbSNP.vcf\
     -o Yoursample_recalibration_data.table
-```  
+```
+
+
 This creates a GATKReport file called Yoursample_recalibration_data.table containing several tables. These tables contain the covariation data that will be used in a later step to recalibrate the base qualities of your sequence data.
 It is important that you provide the program with a set of known sites, otherwise it will refuse to run. The known sites are used to build the covariation model and estimate empirical base qualities. For details on what to do if there are no known sites available for your organism of study, please see the online GATK documentation.
 
