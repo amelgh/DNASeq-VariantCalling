@@ -177,7 +177,7 @@ java -jar $GATK \
     -I realignedBam.bam \
     -BQSR Yoursample_recalibration_data.table \
     -o Yoursample_realigned_recalibrated.bam
- ```   
+ ```
  
 This creates a file called Yoursample_realigned_recalibrated.bam containing all the original reads, but now with exquisitely accurate base substitution, insertion and deletion quality scores. By default, the original quality scores are discarded in order to keep the file size down.
 
