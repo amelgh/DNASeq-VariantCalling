@@ -5,6 +5,8 @@ Some of the more popular tools for calling variants include SAMtools mpileup, th
 
 We recommend using GATK during this Course. For more information, check the GATK suite website https://software.broadinstitute.org/gatk/ and a best practices guide with examples from different organisms: https://software.broadinstitute.org/gatk/best-practices/
 
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
 You can start by specifying creating 2 variables $GATK and $PICARD that will contain the respective paths to the different JAR files of the GATK and PICARD suites.
 
 ```
