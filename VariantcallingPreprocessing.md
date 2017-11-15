@@ -35,6 +35,30 @@ More information about MarkDuplicates and the different picard command lines dif
 samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
 ```
 
+
+* AddOrReplaceReadGroups 
+
+Replace read groups in a BAM file. This tool enables the user to replace all read groups in the INPUT file with a single new read group and assign all reads to this read group in the OUTPUT BAM file.
+
+# Usage Example
+#java -jar picard.jar AddOrReplaceReadGroups \
+I=input.bam \
+O=output.bam \
+RGID=4 \
+RGLB=lib1 \
+RGPL=illumina \
+RGPU=unit1 \
+RGSM=20
+# LB --> Read Group library
+# PL --> Read Group platform (e.g. illumina, solid)
+# PU --> Read Group platform unit (eg. run barcode)
+# SM --> Read Group sample name
+
+Other example: #$JAVA -jar $PICARD AddOrReplaceReadGroups INPUT=$outDir/796-pro.rmdup.bam LB=1 PL=Illumina PU=x SM="$runName" OUTPUT=$outDir/796-pro.valid.bam
+
+
+
+
 * RealignerTargetCreator
 
 The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches.
