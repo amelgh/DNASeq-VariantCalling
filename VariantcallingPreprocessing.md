@@ -41,7 +41,8 @@ samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
 Replace read groups in a BAM file. This tool enables the user to replace all read groups in the INPUT file with a single new read group and assign all reads to this read group in the OUTPUT BAM file.
 
 # Usage Example
-#java -jar picard.jar AddOrReplaceReadGroups \
+```
+java -jar picard.jar AddOrReplaceReadGroups \
 I=input.bam \
 O=output.bam \
 RGID=4 \
@@ -49,15 +50,31 @@ RGLB=lib1 \
 RGPL=illumina \
 RGPU=unit1 \
 RGSM=20
-# LB --> Read Group library
-# PL --> Read Group platform (e.g. illumina, solid)
-# PU --> Read Group platform unit (eg. run barcode)
-# SM --> Read Group sample name
+```
+LB --> Read Group library
+PL --> Read Group platform (e.g. illumina, solid)
+PU --> Read Group platform unit (eg. run barcode)
+SM --> Read Group sample name
 
-Other example: #$JAVA -jar $PICARD AddOrReplaceReadGroups INPUT=$outDir/796-pro.rmdup.bam LB=1 PL=Illumina PU=x SM="$runName" OUTPUT=$outDir/796-pro.valid.bam
+Other example: 
+```
+java -jar $PICARD AddOrReplaceReadGroups
+INPUT=.rmdup.bam 
+LB=1 PL=Illumina PU=x 
+SM="$runName"
+OUTPUT=.valid.bam
+```
 
+* Index the resulting file
+```
+samtools index yoursample.valid.bam #a yoursample.valid.bam.bai will be created
+```
 
+* Indexing the reference file
 
+```
+samtools faidx Path to your fasta file
+```
 
 * RealignerTargetCreator
 
