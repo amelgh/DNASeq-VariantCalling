@@ -12,7 +12,7 @@ You can samtools: a free software package for manipulating SAM/BAM files to mani
 It does provide utilities for:
 
 |Viewing and formatting|
-|----------------------|
+
 |Extracting statistics |
 |----------------------|
 |Indexing              |
