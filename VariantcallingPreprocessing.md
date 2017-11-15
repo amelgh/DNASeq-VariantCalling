@@ -12,7 +12,6 @@ export PICARD='/hpc/opt/conda/envs/picard@2.10.6/share/picard-2.10.6-0/picard.ja
 export GATK='/hpc/opt/conda/envs/gatk@3.8/opt/gatk-3.8/GenomeAnalysisTK.jar'
 ```
 
-
 * Index your BAM file if you did not do it yet
 
 ```
@@ -20,6 +19,21 @@ samtools sort yoursample.bam > yoursample.srt.bam
 samtools index yoursample.srt.bam # yoursample.srt.bam.bai will be created in the same directory 
 ```
 
+* Mark Duplicated: duplicated reads flaged
+
+```
+java -jar $PICARD MarkDuplicates 
+INPUT=yoursample.srt.bam 
+OUTPUT=yoursample.rmdup.bam 
+METRICS_FILE=yoursample.srt.bam.metrics  #File to write duplication metrics to Required
+REMOVE_DUPLICATES=TRUE
+```
+More information about MarkDuplicates and the different picard command lines different options: http://broadinstitute.github.io/picard/command-line-overview.html#MarkDuplicates
+
+* Index the marked file
+```
+samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
+```
 
 * RealignerTargetCreator
 
@@ -53,7 +67,7 @@ java -jar GenomeAnalysisTk.jar \
 
 * IndelRealigner
 
-# Usage Example
+Usage Example
 ```
 java -jar GenomeAnalysisTK.jar \
 -T IndelRealigner \
