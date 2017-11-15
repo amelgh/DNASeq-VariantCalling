@@ -23,6 +23,14 @@ samtools sort yoursample.bam > yoursample.srt.bam
 samtools index yoursample.srt.bam # yoursample.srt.bam.bai will be created in the same directory 
 ```
 
+* Generate the sequence dictionary using Picard:
+
+```
+java -jar $PICARD CreateSequenceDictionary 
+REFERENCE=yourreference.fa 
+OUTPUT=yourreference.dict
+```
+
 * Mark Duplicated: duplicated reads flaged
 
 ```
