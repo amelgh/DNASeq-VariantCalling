@@ -115,6 +115,7 @@ java -jar $GATK \
 ```
 
 Usage Example for additional option "UnmappedReadFilter" = Filter out unmapped reads
+
 ```
 java -jar $GATK\
 -T ToolName \
@@ -129,6 +130,7 @@ java -jar $GATK\
 * Second: perform realignment of the target intervals using #IndelRealigner
 
 Usage Example
+
 ```
 java -jar $GATK \
 -T IndelRealigner \
