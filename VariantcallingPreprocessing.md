@@ -1,5 +1,5 @@
 With good quality (trimmed, filtered if necessary) data in hands, you've aligned your samples to your reference genome and obtained a BAM file. 
-Before performing the variant calling, you might need to perform local re-alignments around indels, mark duplicates, etc.  
+Before performing the variant calling, you might need to perform some clean up operations on your data to correct for technical biases and make the data suitable for analysis like re-alignments around indels, mark duplicates, etc.  
 
 Some of the more popular tools for calling variants include SAMtools mpileup, the GATK suite and FreeBayes.
 
