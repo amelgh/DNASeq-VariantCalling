@@ -61,11 +61,11 @@ samtools flagstat file.bam: does a full pass through the input file to calculate
 |% reads mapped|
 |--------------|
 |% unmapped reads|
-|--------------|
+|----------------|
 |% reads properly paired|
-|--------------|
-|Other information|
-|--------------|
+|-----------------------|
+|Other information      |
+|-----------------------|
 
 
 Many tools require a BAM Index file to more efficiently access reads in a BAM file.  
