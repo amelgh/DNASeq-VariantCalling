@@ -23,6 +23,11 @@ samtools sort yoursample.bam > yoursample.srt.bam
 samtools index yoursample.srt.bam # yoursample.srt.bam.bai will be created in the same directory 
 ```
 
+* Indexing the reference file
+```
+samtools faidx Path to your fasta file
+```
+
 * Generate the sequence dictionary using Picard:
 
 ```
@@ -83,13 +88,6 @@ OUTPUT= yoursample.valid.bam
 ```
 samtools index yoursample.valid.bam #a yoursample.valid.bam.bai will be created
 ```
-
-* Indexing the reference file
-
-```
-samtools faidx Path to your fasta file
-```
-
 * RealignerTargetCreator
 
 The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches.
