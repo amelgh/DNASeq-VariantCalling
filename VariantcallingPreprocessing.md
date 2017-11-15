@@ -106,7 +106,7 @@ Output  --> A list of target intervals to pass to the IndelRealigner.
 Usage example
 
 ```
-java -jar GenomeAnalysisTK.jar \
+java -jar $GATK \
 -T RealignerTargetCreator \
 -R reference.fasta \
 -I yoursample.valid.bam \
@@ -116,7 +116,7 @@ java -jar GenomeAnalysisTK.jar \
 
 Usage Example for additional option "UnmappedReadFilter" = Filter out unmapped reads
 ```
-java -jar GenomeAnalysisTk.jar \
+java -jar $GATK\
 -T ToolName \
 -R reference.fasta \
 -I input.bam \
@@ -130,7 +130,7 @@ java -jar GenomeAnalysisTk.jar \
 
 Usage Example
 ```
-java -jar GenomeAnalysisTK.jar \
+java -jar $GATK \
 -T IndelRealigner \
 -R reference.fasta \
 -I yoursample.valid.bam \
@@ -144,5 +144,35 @@ java -jar GenomeAnalysisTK.jar \
 -known --> (Optional Input) Input VCF file(s) with known indels
 -o --> (Optional Output) Output Bam
 
+
+* Base quality score recalibration
+
+Two steps:
+- Analyse patterns of covariation in the sequence dataset
+- Apply the recalibration to your sequence data
+
+Step1:
+
+```
+java -jar $GATK \
+    -T BaseRecalibrator \
+    -R pathtoyourreferencegenome.fa \
+    -I realignedBam.bam\
+    -knownSites dbSNP.vcf\
+    -o Yoursample_recalibration_data.table
+```  
+This creates a GATKReport file called Yoursample_recalibration_data.table containing several tables. These tables contain the covariation data that will be used in a later step to recalibrate the base qualities of your sequence data.
+It is important that you provide the program with a set of known sites, otherwise it will refuse to run. The known sites are used to build the covariation model and estimate empirical base qualities. For details on what to do if there are no known sites available for your organism of study, please see the online GATK documentation.
+
+Step2:
+```
+java -jar $GATK \
+    -T PrintReads \
+    -R pathtoyourreferencegenome.fa\
+    -I realignedBam.bam \
+    -BQSR Yoursample_recalibration_data.table \
+    -o Yoursample_realigned_recalibrated.bam
+ ```   
+This creates a file called Yoursample_realigned_recalibrated.bam containing all the original reads, but now with exquisitely accurate base substitution, insertion and deletion quality scores. By default, the original quality scores are discarded in order to keep the file size down.
 
 
