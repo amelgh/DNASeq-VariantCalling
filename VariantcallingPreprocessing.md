@@ -40,6 +40,8 @@ samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
 
 Replace read groups in a BAM file. This tool enables the user to replace all read groups in the INPUT file with a single new read group and assign all reads to this read group in the OUTPUT BAM file.
 
+https://software.broadinstitute.org/gatk/documentation/article.php?id=6472
+
 # Usage Example
 ```
 java -jar picard.jar AddOrReplaceReadGroups \
