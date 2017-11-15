@@ -65,7 +65,7 @@ samtools faidx Path to your fasta file
 
 ```
 java -jar $GATK -T RealignerTargetCreator 
--nt 8 -rf ReassignMappingQuality -DMQ 60 -R Path-to_your_Referencefasta_file
+-nt 8 -rf ReassignMappingQuality -DMQ 60 -R Pathto_your_Referencefasta_file
 -I  yoursample.valid.bam 
 -o yoursample.valid.bam.intervals;
 ```
@@ -74,7 +74,7 @@ java -jar $GATK -T RealignerTargetCreator
 
 ```
 java -jar $GATK 
--T IndelRealigner -R Path-to_your_Referencefasta_file
+-T IndelRealigner -R Pathto_your_Referencefasta_file
 -I yoursample.valid.bam
 -targetIntervals yoursample.valid.bam.intervals
 -o yoursample.valid.realigned.bam
