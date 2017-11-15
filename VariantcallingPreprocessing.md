@@ -59,7 +59,7 @@ Replace read groups in a BAM file. This tool enables the user to replace all rea
 
 https://software.broadinstitute.org/gatk/documentation/article.php?id=6472
 
-# Usage Example
+Usage Example
 ```
 java -jar picard.jar AddOrReplaceReadGroups \
 I= yoursample.rmdup.bam \
@@ -88,13 +88,15 @@ OUTPUT= yoursample.valid.bam
 ```
 samtools index yoursample.valid.bam #a yoursample.valid.bam.bai will be created
 ```
-* RealignerTargetCreator
-
-The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches.
+* Local realignment around INDELS
 
 There are 2 steps to the realignment process:
 1. Determining (small) suspicious intervals which are likely in need of realignment (RealignerTargetCreator)
 2. Running the realigner over those intervals (see the IndelRealigner tool)
+
+* First: create a target list of intervals which need to be realigned using #RealignerTargetCreator
+
+The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches.
 
 Note that indel realignment is no longer necessary for variant discovery if you plan to use a variant caller that performs a haplotype assembly step, such as HaplotypeCaller or MuTect2. However it is still required when using legacy callers such as UnifiedGenotyper or the original MuTect.
 
@@ -112,7 +114,7 @@ java -jar GenomeAnalysisTK.jar \
 -o yoursample.valid.bam.intervals
 ```
 
-* Usage Example for additional option "UnmappedReadFilter" = Filter out unmapped reads
+Usage Example for additional option "UnmappedReadFilter" = Filter out unmapped reads
 ```
 java -jar GenomeAnalysisTk.jar \
 -T ToolName \
@@ -124,7 +126,7 @@ java -jar GenomeAnalysisTk.jar \
 
 
 
-* IndelRealigner
+* Second: perform realignment of the target intervals using #IndelRealigner
 
 Usage Example
 ```
@@ -141,3 +143,6 @@ java -jar GenomeAnalysisTK.jar \
 -targetIntervals --> (Required Input) Intervals file output from RealignerTargetCreator
 -known --> (Optional Input) Input VCF file(s) with known indels
 -o --> (Optional Output) Output Bam
+
+
+
