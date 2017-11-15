@@ -11,3 +11,24 @@ java -jar $GATK\
     -I Yoursample_realigned_recalibrated.bam\
     -o yoursample.vcf
 ```
+
+* Introduce filters in the VCF file
+
+Once we have called the variants, we might be interested in filtering out some according to the confidence associated to them. Some of the most basic filters consist of identifying variants with low calling quality or a low number of reads supporting the variant. There are many programs that can be used to filter VCFs like: bcftools from Samtools to preform a basic filtering.
+
+```
+bcftools filter -s LowQual -e 'QUAL<20 | DP<3' yoursample.vcf > yoursample_filtered.vcf
+```
+
+To check how many variants fail to pass these filters:
+
+```
+grep LowQual yoursample_filtered.vcf | wc -l
+``` 
+
+To check how many  passed these filters:
+
+```
+grep PASS yoursample_filtered.vcf | wc -l
+```
+
