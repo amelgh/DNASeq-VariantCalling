@@ -165,6 +165,7 @@ This creates a GATKReport file called Yoursample_recalibration_data.table contai
 It is important that you provide the program with a set of known sites, otherwise it will refuse to run. The known sites are used to build the covariation model and estimate empirical base qualities. For details on what to do if there are no known sites available for your organism of study, please see the online GATK documentation.
 
 Step2:
+
 ```
 java -jar $GATK \
     -T PrintReads \
@@ -173,6 +174,7 @@ java -jar $GATK \
     -BQSR Yoursample_recalibration_data.table \
     -o Yoursample_realigned_recalibrated.bam
  ```   
+ 
 This creates a file called Yoursample_realigned_recalibrated.bam containing all the original reads, but now with exquisitely accurate base substitution, insertion and deletion quality scores. By default, the original quality scores are discarded in order to keep the file size down.
 
 
