@@ -43,8 +43,8 @@ Replace read groups in a BAM file. This tool enables the user to replace all rea
 # Usage Example
 ```
 java -jar picard.jar AddOrReplaceReadGroups \
-I=input.bam \
-O=output.bam \
+I= yoursample.rmdup.bam \
+O= yoursample.valid.bam \
 RGID=4 \
 RGLB=lib1 \
 RGPL=illumina \
@@ -59,10 +59,10 @@ SM --> Read Group sample name
 Other example: 
 ```
 java -jar $PICARD AddOrReplaceReadGroups
-INPUT=.rmdup.bam 
+INPUT= yoursample.rmdup.bam
 LB=1 PL=Illumina PU=x 
 SM="$runName"
-OUTPUT=.valid.bam
+OUTPUT= yoursample.valid.bam
 ```
 
 * Index the resulting file
@@ -95,9 +95,9 @@ Usage example
 java -jar GenomeAnalysisTK.jar \
 -T RealignerTargetCreator \
 -R reference.fasta \
--I input.bam \
+-I yoursample.valid.bam \
 --known indels.vcf \
--o forIndelRealigner.intervals
+-o yoursample.valid.bam.intervals
 ```
 
 * Usage Example for additional option "UnmappedReadFilter" = Filter out unmapped reads
@@ -119,9 +119,9 @@ Usage Example
 java -jar GenomeAnalysisTK.jar \
 -T IndelRealigner \
 -R reference.fasta \
--I input.bam \
+-I yoursample.valid.bam \
 -known indels.vcf \
--targetIntervals intervalListFromRTC.intervals \
+-targetIntervals yoursample.valid.bam.intervals \
 -o realignedBam.bam
 ```
 
