@@ -40,6 +40,7 @@ qstat -xan1: to list the completed jobs
 Links to all the jar files that you might require to run some of the tools:
 
 |trimmomatic |/hpc/opt/conda/envs/trimmomatic@0.36/share/trimmomatic-0.36-5/trimmomatic.jar|
+|------------------------------------------------------------------------------------------|
 |gatk        |/hpc/opt/conda/envs/gatk@3.8/opt/gatk-3.8/GenomeAnalysisTK.jar               |
 |alientrimmer|/hpc/opt/alientrimmer/0.4.0/AlienTrimmer.jar                                 |
 |picard      |/hpc/opt/conda/envs/picard@2.10.6/share/picard-2.10.6-0/picard.jar           |
