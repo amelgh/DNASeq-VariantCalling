@@ -37,10 +37,16 @@ samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
 
 * RealignerTargetCreator
 
-The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches. 
+The local realignment process is designed to consume one or more BAM files and to locally realign reads such that the number of mismatching bases is minimized across all the reads. Local realignment serves to transform regions with misalignments due to indels into clean reads containing a consensus indel suitable for standard variant discovery approaches.
+
+There are 2 steps to the realignment process:
+1. Determining (small) suspicious intervals which are likely in need of realignment (RealignerTargetCreator)
+2. Running the realigner over those intervals (see the IndelRealigner tool)
+
+Note that indel realignment is no longer necessary for variant discovery if you plan to use a variant caller that performs a haplotype assembly step, such as HaplotypeCaller or MuTect2. However it is still required when using legacy callers such as UnifiedGenotyper or the original MuTect.
 
 Inputs --> One or more aligned BAM files and optionally, one or more lists of known indels.
-Outputs  --> A list of target intervals to pass to the IndelRealigner.
+Output  --> A list of target intervals to pass to the IndelRealigner.
 
 Usage example
 
