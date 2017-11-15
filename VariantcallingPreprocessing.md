@@ -3,9 +3,9 @@ Before performing the variant calling, you might need to perform local re-alignm
 
 Some of the more popular tools for calling variants include SAMtools mpileup, the GATK suite and FreeBayes.
 
-We recommend using GATK during this Course. For more information, check the GATK suite website (https://software.broadinstitute.org/gatk/)
+We recommend using GATK during this Course. For more information, check the GATK suite website https://software.broadinstitute.org/gatk/ and a best practices guide with examples from different organisms: https://software.broadinstitute.org/gatk/best-practices/
 
-You can start by specifying creating 2 variables $GATK and $PICARD that will contain the respective paths to the different JAR files contained in the GATK and PICARD suites.
+You can start by specifying creating 2 variables $GATK and $PICARD that will contain the respective paths to the different JAR files of the GATK and PICARD suites.
 
 ```
 export PICARD='/hpc/opt/conda/envs/picard@2.10.6/share/picard-2.10.6-0/picard.jar'
