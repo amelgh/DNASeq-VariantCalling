@@ -1,7 +1,5 @@
 With good quality (trimmed, filtered if necessary) data in hands, you've aligned your samples to your reference genome and obtained a BAM file. 
 
-![Alt text](/Images/DNASeqGeneralPipeline.png "A reminder of DNASeq general analysis workflow leading to the Variant calling step")
-
 Some of the more popular tools for calling variants include SAMtools mpileup, the GATK suite and FreeBayes.
 We recommend using GATK during this Course. For more information, check the GATK suite website https://software.broadinstitute.org/gatk/ and a best practices guide with examples from different organisms: https://software.broadinstitute.org/gatk/best-practices/
 
