@@ -49,7 +49,7 @@ More information about MarkDuplicates and the different picard command lines dif
 
 * Index the marked file
 ```
-samtools index yoursample.rmdup.bam #a yoursample.rmdup.bam.bai will be created
+samtools index yoursample.rmdup.bam # yoursample.rmdup.bam.bai will be created
 ```
 
 
