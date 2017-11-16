@@ -25,7 +25,7 @@ samtools mpileup –B –q 1 –f reference.fasta normal.bam tumor.bam >normal-t
 ```
 Run VarScan in somatic mode, providing the mpileup file (normal-tumor.mpileup) and a basename for output files (output.basename):
 ```
-java –jar VarScan.jar somatic normal-tumor.mpileup output.basename –min-coverage 10 –min-var-freq 0.08 –somatic-p-value 0.05
+VarScan somatic normal-tumor.mpileup output.basename –min-coverage 10 –min-var-freq 0.08 –somatic-p-value 0.05
 ```
 
 Many options available for somatic mutations, including mutation calling parameters (see table 3) or output field names (table 4) at:
