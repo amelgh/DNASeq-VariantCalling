@@ -61,8 +61,25 @@ Variant annotations is the process of predict the effect or function of SNP usin
 
 ![Alt text](/Images/SNPannotation1.png "Different types of functional annotation")
 
-You might perform annotation based known variants based on databases containing variants that have previously been described like dbSNP (https://www.ncbi.nlm.nih.gov/projects/SNP/) or categorize each variant based on the annotation of your genome to annotate and predict the impcat of variants on genes functions: Are they in a gene? In an exon? Do they change protein coding? Do they cause premature stop codons? 
+You might perform annotation based known variants based on databases containing variants that have previously been described like dbSNP (https://www.ncbi.nlm.nih.gov/projects/SNP/) or categorize each variant based on the annotation of your genome to annotate and predict the impact of variants on genes functions: Are they in a gene? In an exon? Do they change protein coding? Do they cause premature stop codons? 
 
+. SnpEff to annotate your variants
+
+In order to produce the annotations, SnpEff requires a database. SnpEff has many pre-built databases for many reference genomes. If your organism is not supported,  you need to build a database.
+
+To check which databases are supported, you can use this command:
+
+```
+snpEff databases | less
+```
+If you are looking for a specific database (hg38 for example), use this command
+```
+snpEff databases | grep -i hg38
+```
+Running SnpEff to annotate your VCF (a very simple example)
+```
+snpEff hg38 yoursample.vcf > yoursample.annotate.vcf
+```
 
 An example of a guided SNP annotation analysis based on the use of SnpEff (a variant effect predictor): https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.
 
