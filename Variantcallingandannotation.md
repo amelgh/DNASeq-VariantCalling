@@ -80,7 +80,7 @@ Running SnpEff to annotate your VCF (a very simple example)
 ```
 snpEff hg38 yoursample.vcf > yoursample.annotate.vcf
 ```
-In your yoursample.annotate.vcf file, SnpEff added functional annotations in the ANN info field. Check the SnpEff  
+In your yoursample.annotate.vcf file, SnpEff added functional annotations in the ANN info field. More information about the ANN field: http://snpeff.sourceforge.net/VCFannotationformat_v1.0.pdf
 
 An example of a guided SNP annotation analysis based on the use of SnpEff (a variant effect predictor): https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.md
 
