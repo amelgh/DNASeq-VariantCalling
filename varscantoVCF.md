@@ -17,5 +17,22 @@ Other possible OPTIONS:
 	--output-vcf	If set to 1, outputs in VCF format
 	--variants	Report only variant (SNP/indel) positions (mpileup2cns only) [0]
 	
-	
+* Additional example details to perform somatic mutation calling:
+
+Run SAMtools mpileup on the BAM files for normal and tumor
+```
+samtools mpileup –B –q 1 –f reference.fasta normal.bam tumor.bam >normal-tumor.mpileup
+```
+Run VarScan in somatic mode, providing the mpileup file (normal-tumor.mpileup) and a basename for output files (output.basename):
+```
+java –jar VarScan.jar somatic normal-tumor.mpileup output.basename –min-coverage 10 –min-var-freq 0.08 –somatic-p-value 0.05
+```
+
+Many options available for somatic mutations, including mutation calling parameters (see table 3) or output field names (table 4) at:
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4278659/
+
+
+Example of additional options for VCF output: 
+--output-vcf	Generate VCF output	Set to 1 if VCF output is desired, or leave unset for VarScan's native output format, which is more human readable.
+
 More information: http://varscan.sourceforge.net/using-varscan.html	
