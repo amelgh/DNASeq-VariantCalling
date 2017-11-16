@@ -1,7 +1,4 @@
-http://varscan.sourceforge.net/using-varscan.html
-
-
-. Call SNPs from an mpileup file based on user-defined parameters: use the mpileup2snp function
+* Call SNPs from an mpileup file based on user-defined parameters: use the mpileup2snp function
 
 ```
 VarScan mpileup2snp Yoursample.pileup   --min-coverage 10 --min-base-qual 30 --output-vcf   1 > Yoursample.vcf
@@ -19,3 +16,6 @@ Other possible OPTIONS:
 	--strand-filter	Ignore variants with >90% support on one strand [1]
 	--output-vcf	If set to 1, outputs in VCF format
 	--variants	Report only variant (SNP/indel) positions (mpileup2cns only) [0]
+	
+	
+More information: http://varscan.sourceforge.net/using-varscan.html	
