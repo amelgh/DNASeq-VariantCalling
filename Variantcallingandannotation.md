@@ -57,6 +57,9 @@ More information about vcftools and the different possible options can be found 
 
 Variant annotations is the process of predict the effect or function of SNP using SNP annotational tools. Read more about the different possible ways and tools for annotating variants https://en.wikipedia.org/wiki/SNP_annotation
 
+
+![Alt text](/Images/SNPannotation1.png "Different types of functional annotation")
+
 An example of a guided SNP annotation analysis based on the use of SnpEff: https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.md
 
 
