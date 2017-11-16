@@ -35,3 +35,24 @@ To check how many  passed these filters:
 grep PASS yoursample_filtered.vcf | wc -l
 ```
 
+There any many other different options that can be used such as to add filtering layers such as:
+
+Include/exclude specific chromosomes
+
+```
+--chr 1 #include chr1
+--not-chr 1 #exclude chr1
+```
+
+Filter by variant types:
+
+```
+--keep-only-indels 
+--remove-indels 
+
+```
+
+
+More information about vcftools and the different possible options can be found in the vcftools manual: https://vcftools.github.io/man_latest.html
+
+
