@@ -61,7 +61,9 @@ Variant annotations is the process of predict the effect or function of SNP usin
 
 ![Alt text](/Images/SNPannotation1.png "Different types of functional annotation")
 
+You might perform annotation based known variants based on databases containing variants that have previously been described like dbSNP (https://www.ncbi.nlm.nih.gov/projects/SNP/) or categorize each variant based on the annotation of your genome to annotate and predict the effects of variants on genes: Are they in a gene? In an exon? Do they change protein coding? Do they cause premature stop codons? 
 
-An example of a guided SNP annotation analysis based on the use of SnpEff: https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.md
+
+An example of a guided SNP annotation analysis based on the use of SnpEff (a variant predictor): https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.
 
 
