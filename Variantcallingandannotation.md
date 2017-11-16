@@ -61,9 +61,18 @@ Variant annotations is the process of predict the effect or function of SNP usin
 
 ![Alt text](/Images/SNPannotation1.png "Different types of functional annotation")
 
-You might perform annotation based known variants based on databases containing variants that have previously been described like dbSNP (https://www.ncbi.nlm.nih.gov/projects/SNP/) or categorize each variant based on the annotation of your genome to annotate and predict the effects of variants on genes: Are they in a gene? In an exon? Do they change protein coding? Do they cause premature stop codons? 
+You might perform annotation based known variants based on databases containing variants that have previously been described like dbSNP (https://www.ncbi.nlm.nih.gov/projects/SNP/) or categorize each variant based on the annotation of your genome to annotate and predict the impcat of variants on genes functions: Are they in a gene? In an exon? Do they change protein coding? Do they cause premature stop codons? 
 
 
 An example of a guided SNP annotation analysis based on the use of SnpEff (a variant effect predictor): https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.
+
+You can also perform the variants prioritarization step, for more information check this lesson: https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/04_prioritization-gemini.md
+
+Here is a good practice guide to filtering and prioritizing genetic variants https://www.biotechniques.com/multimedia/archive/00253/BTN_A_000114492_O_253966a.pdf 
+
+
+Check out this new proteo-genomics resource to visualize and explore mutations affecting post-translational modification (PTM) sites in human proteins/genes: active Drive DB https://www.activedriverdb.org. Here is the link to the publication: https://academic.oup.com/nar/article/doi/10.1093/nar/gkx973/4566599
+
+ 
 
 
