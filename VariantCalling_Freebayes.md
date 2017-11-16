@@ -10,5 +10,5 @@ freebayes -f pathttoyourReference.fa Yoursample.bam > Yoursample.vcf
 ```
 
 The result will be a VCF file summarizing the different variants.
-You can then perform the same steps to filter and annotate your variants.
+You can then perform the same steps as in Variantcallingandannotation  to filter and annotate your variants.
 
