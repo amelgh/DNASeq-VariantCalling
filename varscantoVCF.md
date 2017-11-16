@@ -9,12 +9,10 @@ VarScan mpileup2snp Yoursample.pileup   --min-coverage 10 --min-base-qual 30 --o
 If the option --output-vcf	If set to 1, outputs in VCF format
 
 Other possible OPTIONS:
+
 	--min-coverage	Minimum read depth at a position to make a call [8]
-	
 	--min-reads2	Minimum supporting reads at a position to call variants [2]
-	
 	--min-avg-qual	Minimum base quality at a position to count a read [15]
-	
 	--min-var-freq	Minimum variant allele frequency threshold [0.01]
 	
 	--min-freq-for-hom	Minimum frequency to call homozygote [0.75]
