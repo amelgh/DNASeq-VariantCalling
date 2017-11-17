@@ -88,7 +88,7 @@ If there is no available database for you genome of interest, you can build a da
 
 2. Add your genome to the SnpEff configuration file (to tell SnpEff there is a new genome available)
 
-    1.If the genome uses a non-standard codon table. More information here: http://snpeff.sourceforge.net/SnpEff_manual.html#buildAddConfigCodonTable
+    1.If the genome uses a non-standard codon table. More information here:     http://snpeff.sourceforge.net/SnpEff_manual.html#buildAddConfigCodonTable
     2. You must add a new genome entry to snpEffect.config
     Here is an example adding the Influenze N1H1 genome
     ```
