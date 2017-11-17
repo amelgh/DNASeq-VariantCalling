@@ -82,6 +82,30 @@ snpEff hg38 yoursample.vcf > yoursample.annotate.vcf
 ```
 In your yoursample.annotate.vcf file, SnpEff added functional annotations in the ANN info field. More information about the ANN field: http://snpeff.sourceforge.net/VCFannotationformat_v1.0.pdf
 
+If there is no available database for you genome of interest, you can build a database yourself. Here are the main steps you have to perform to do so:
+
+1. Download yourreference.fasta, #you should create a folder named yourreferenceversion in which you store the fasta file
+
+2. Add your genome to the SnpEff configuration file (to tell SnpEff there is a new genome available)
+
+    1.If the genome uses a non-standard codon table. More information here: http://snpeff.sourceforge.net/SnpEff_manual.html#buildAddConfigCodonTable
+    2. You must add a new genome entry to snpEffect.config
+    Here is an example adding the Influenze N1H1 genome
+    ```
+    open snpEffect.config 
+    add line N1H1.genome : Influenza 
+    ```
+    
+3. Download your reference genome annotation file (.GFF, .GTF, GenBank files, etc.) # add it to the same folder yourreferenceversion
+4. Run a command to create the database
+
+```
+cd path_to_SnpEff directory
+snpEff build -gff3 -v yourreferenceversion # -gff3 if you've gff3 annotation file
+```
+More information about building a new database to SnpEff: http://snpeff.sourceforge.net/SnpEff_manual.html#databases
+
+
 An example of a guided SNP annotation analysis based on the use of SnpEff (a variant effect predictor): https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/03_annotation-snpeff.md
 
 You can also perform the variants prioritarization step, for more information check this lesson: https://github.com/hbctraining/In-depth-NGS-Data-Analysis-Course/blob/master/sessionVI/lessons/04_prioritization-gemini.md
