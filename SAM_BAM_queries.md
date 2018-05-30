@@ -10,15 +10,14 @@ A single SAM file can store mapped, unmapped, and even QC-failed reads from a se
 
 * SAM tools to explore SAM and BAM files
 
-You can use **samtools**: a free software package for manipulating SAM/BAM files to manipulate your SAM/BAM files and extract different kind of information from them:
-Samtools provide utilities for:
+You can use **samtools**: a free software package for manipulating SAM/BAM files to manipulate your SAM/BAM files and extract different kind of information from them.
+Samtools provide utilities for: <br/>
 
-|Viewing and formatting|
-|----------------------|
-|Extracting statistics |
-|Indexing              |
-|Manipulating SAM/BAM files|
-|Editing               |
+* Viewing and formatting
+* Extracting statistics
+* Indexing 
+* Manipulating SAM/BAM files
+* Editing 
 
 ```
 Usage:  samtools <command> [options]
@@ -32,22 +31,22 @@ samtools view
 
 **from SAM to BAM**
 ```
-samtools view -b test.sam > test.bam
+samtools view -b file.sam > file.bam
 ```
 or 
 ```
-samtools view -bT test.sam > test.bam
+samtools view -bT file.sam > file.bam
 #if the header is absent from the SAM file
 ```
 or 
 ```
-samtools view -bS test.sam > test.bam
+samtools view -bS file.sam > file.bam
 #if the header is header information is available
 ```
 
 **from BAM to SAM**
 ```
-samtools view test.bam > test.sam
+samtools view file.bam > file.sam
 ```
 Use options –h and –H to deal with the header
 
@@ -56,11 +55,11 @@ Use options –h and –H to deal with the header
 * **samtools sort** 
 ```
 #sorting a bam file
-samtools sort test.bam –o test.bam
+samtools sort file.bam –o file_sorted.bam
 ```
 ```
 #converting SAM directly to a sorted BAM file
-samtools view test.sam |samtools sort –o test.bam
+samtools view file.sam |samtools sort –o file_sorted.bam
 ```
 SAM/BAM files can be sorted in multiple ways, e.g. by location of alignment on the chromosome, by read name, etc. Note that different alignment tools will output differently sorted SAM/BAM, and you might need differently sorted alignment files as input for different downstream analysis tools.
 * **mapping statistics** 
@@ -68,13 +67,7 @@ SAM/BAM files can be sorted in multiple ways, e.g. by location of alignment on t
 ```
 samtools flagstat file.bam
 ```
-does a full pass through the input file to calculate and print statistics such as:
-
-|% reads mapped|
-|--------------|
-|% unmapped reads|
-|% reads properly paired|
-|Other information      |
+does a full pass through the input file to calculate and print statistics such as: %reads mapped, % unmapped reads, % reads properly paired and Other information. <br/>
 
 
 Many tools require a BAM Index file to more efficiently access reads in a BAM file.  
@@ -117,12 +110,12 @@ samtools depth options file.bam
 
 ```
 # –a allows to output all positions (including those with zero depth) 
-samtools depth –a test.bam
+samtools depth –a file.bam
 ```
 
 ```
 #–q INT only count reads with base quality greater than INT
-samtools depth –q int test.bam
+samtools depth –q int file.bam
 ```
 
 * **Computing the coverage per region**
